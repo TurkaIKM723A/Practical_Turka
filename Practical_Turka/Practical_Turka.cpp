@@ -1,14 +1,20 @@
 #include <iostream>
-
 using namespace std;
 
-int factorial(int n) {
-    
-    if (n == 0)
+bool isPrime(int num) {
+ 
+    if (num <= 1)
 
-        return 1;
+        return false;
 
-    return n * factorial(n - 1);
+    for (int i = 2; i * i <= num; ++i) {
+
+        if (num % i == 0)
+
+            return false;
+    }
+
+    return true; 
 }
 
 int main() {
@@ -18,8 +24,18 @@ int main() {
     cout << "Write your number: ";
     cin >> num;
 
-    cout << "The factorial of a number " << num << " is: " << factorial(num) << '\n';
+    if (isPrime(num)) {
+
+        cout << num << " is a prime number." << '\n';
+    }
+
+    else {
+
+        cout << num << " is not a prime number." << '\n';
+
+    }
 
     return 0;
 }
+
 
