@@ -1,41 +1,30 @@
 #include <iostream>
+
 using namespace std;
 
-bool isPrime(int num) {
- 
-    if (num <= 1)
+int sumArray(int arr[], int size) {
 
-        return false;
+    int sum = 0;
 
-    for (int i = 2; i * i <= num; ++i) {
+    for (int i = 0; i < size; ++i) {
 
-        if (num % i == 0)
+        sum += arr[i];
 
-            return false;
     }
 
-    return true; 
+    return sum;
 }
 
 int main() {
 
-    int num;
+    const int SIZE = 5;
+    int array[SIZE] = { 1, 2, 3, 4, 5 }; 
 
-    cout << "Write your number: ";
-    cin >> num;
-
-    if (isPrime(num)) {
-
-        cout << num << " is a prime number." << '\n';
-    }
-
-    else {
-
-        cout << num << " is not a prime number." << '\n';
-
-    }
+    
+    cout << "The sum of array elements: " << sumArray(array, SIZE) << '\n';
 
     return 0;
 }
+
 
 
