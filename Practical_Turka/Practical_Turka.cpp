@@ -2,25 +2,24 @@
 
 using namespace std;
 
-int sum(int a, int b) {
+int factorial(int n) {
+    
+    if (n == 0)
 
-    return a + b;
+        return 1;
 
+    return n * factorial(n - 1);
 }
 
 int main() {
 
-    setlocale(LC_CTYPE, "ukr");
+    int num;
 
-    int num1, num2;
+    cout << "Write your number: ";
+    cin >> num;
 
-    cout << "¬ведiть перше  число: "; 
-    cin >> num1;
-
-    cout << "¬ведiть друге число: ";
-    cin >> num2;
-
-    cout << "—ума чисел " << num1 << " i " << num2 << " дорiвнюЇ: " << sum(num1, num2) << '\n';
+    cout << "The factorial of a number " << num << " is: " << factorial(num) << '\n';
 
     return 0;
 }
+
